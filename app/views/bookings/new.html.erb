@@ -1,1 +1,10 @@
 <h1>Votre booking</h1>
+<div class="container mt-5">
+<h2>booking</h2>
+<%= render 'form', booking: @booking %>
+
+<hr>
+<%= link_to bookings_path do %>
+<i class="fa-solid fa-arrow-rotate-left"></i> Retour
+<% end %>
+</div>
