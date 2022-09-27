@@ -1,9 +1,14 @@
-<%= simple_form_for(booking) do |f| %>
-  <%= f.input :start_date %>
-  <%= f.input :end_date %>
-  <%= f.input :article_id %>
+<%#= simple_form_for(@booking) do |f| %>
+  <%#= f.input :start_date %>
+  <%#= f.input :end_date %>
+  <%#= f.input :article_id %>
   <%# <%= f.input :created_at %>
   <%# <%= f.input :updated_at %> 
-  <%= f.input :users_id %>
-  <%= f.submit class: "btn btn-primary" %>
-<% end %>
+  <%# f.input :users_id, value: "#{current_user.id}"%>
+  <%#= f.submit class: "btn btn-primary" %>
+<%# end %>
+<%= simple_form_for [@article, @booking] do |f| %>
+  <%= f.input :start_date %>
+  <%= f.input :end_date %>
+  <%= f.button :submit %>
+  <% end %>
