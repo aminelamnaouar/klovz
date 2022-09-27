@@ -11,6 +11,7 @@
     <tbody>
       <% @articles.each do |article| %>
         <tr>
+          <td><%= article.title %></td>
           <td><%= article.types %></td>
           <td><%= article.sexe %></td>
           <td><%= article.size %></td>
