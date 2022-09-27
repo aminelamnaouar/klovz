@@ -46,6 +46,6 @@ class ArticlesController < ApplicationController
   end
 
   def article_params
-    params.require(:article).permit(:sexe, :size, :color, :brand, :price, :description, :types)
+    params.require(:article).permit(:title, :sexe, :size, :color, :brand, :price, :description, :types)
   end
 end
