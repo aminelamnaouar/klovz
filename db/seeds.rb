@@ -7,5 +7,5 @@
 #   Character.create(name: "Luke", movie: movies.first)
 
 User.create!(email: "nzila@gmail.com", password: "123456", first_name: "Nzila", last_name: "Nzila", telephone: "0605545625")
-Article.create!(sexe: "Homme", size: "M", color: "Noir", brand: "Nike", price: 100, description: "Très bon état", types: "Chaussures")
+Article.create!(sexe: "Homme", size: "M", color: "Noir", brand: "Nike", price: 100, description: "Très bon état", types: "Chaussures", title: "chaussures NIKE pour homme")
 Booking.create!(start_date: "2021-09-24", end_date: "2021-09-25", users_id: 1, article_id: 1)
