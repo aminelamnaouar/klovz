@@ -1,25 +1,49 @@
 class BookingsController < ApplicationController
+  before_action :init_booking, only: %i[show]
+  before_action :init_article, only: [:create, :new]
+
+  def index
+    @bookings = Booking.where(user: current_user)
+  end
 
   def new
     @booking = Booking.new
-    #@booking.build_user
   end
 
   def create
     @booking = Booking.new(booking_params)
-    @booking.user = current_user
-    @booking.article = Article.find(params[:article_id])
-    if @booking.save
-      redirect_to article_path(@booking.article)
+    @booking.article = @article
+    @booking.users_id = current_user.id
+    if @booking.save!
+      redirect_to articles_path(@articles)
     else
       render :new
     end
   end
 
+  def show
+  end
+
+  def edit
+  end
+
+  def update
+  end
+
+
+
+
   private
 
-
   def booking_params
-    params.require(:booking).permit(:start_date, :end_date, :user_id)
+    params.require(:booking).permit(:start_date, :end_date)
+  end
+
+  def init_booking
+    @booking = Booking.find(params[:id])
+  end
+
+  def init_article
+    @article = Article.find(params[:article_id])
   end
 end
