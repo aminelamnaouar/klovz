@@ -11,11 +11,9 @@ class BookingsController < ApplicationController
   end
 
   def create
-    @user = 1
     @booking = Booking.new(booking_params)
-
     @booking.article = @article
-    @booking.users_id = 1
+    @booking.users_id = current_user.id
     if @booking.save!
       redirect_to articles_path(@articles)
     else

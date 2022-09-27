@@ -1,3 +1,9 @@
+<%= simple_form_for [@article, @booking] do |f| %>
+  <%= f.input :start_date %>
+  <%= f.input :end_date %>
+  <%= f.button :submit %>
+<% end %>
+
 <%#= simple_form_for(@booking) do |f| %>
   <%#= f.input :start_date %>
   <%#= f.input :end_date %>
@@ -7,8 +13,3 @@
   <%# f.input :users_id, value: "#{current_user.id}"%>
   <%#= f.submit class: "btn btn-primary" %>
 <%# end %>
-<%= simple_form_for [@article, @booking] do |f| %>
-  <%= f.input :start_date %>
-  <%= f.input :end_date %>
-  <%= f.button :submit %>
-  <% end %>
