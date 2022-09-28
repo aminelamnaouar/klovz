@@ -11,10 +11,10 @@ class ReviewsController < ApplicationController
 
   def create
     @review = Review.new(review_params)
-    @review.booking = Booking.find(params[:booking_id])
+    @review.article = Article.find(params[:article_id])
     #@review.user = current_user
-    if @review.save?
-      redirect_to booking_path(@review.booking)
+    if @review.save!
+      redirect_to article_path(@review.article)
     else
       render :new
     end
@@ -24,7 +24,6 @@ class ReviewsController < ApplicationController
 
   def review_params
     params.require(:review).permit(:rate_as_client, :about)
-    # Ligne de code à revoir car il manque le rate_as_offer
   end
 end
 

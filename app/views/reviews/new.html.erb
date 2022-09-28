@@ -1,1 +1,9 @@
-<span>formulaire new review</span>
+<div class="container mt-5">
+<h3>Notez votre expérience avec ce produit</h3>
+<%= render 'form', review: @review %>
+
+<hr>
+<%= link_to article_id_path do %>
+<i class="fa-solid fa-arrow-rotate-left"></i> Retour
+<% end %>
+</div>
