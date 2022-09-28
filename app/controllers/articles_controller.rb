@@ -6,6 +6,7 @@ class ArticlesController < ApplicationController
   end
 
   def show
+    @article = article_id
 
   end
 
