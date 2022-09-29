@@ -14,7 +14,8 @@ class BookingsController < ApplicationController
     @booking = Booking.new(booking_params)
     @booking.article = @article
     @booking.users_id = current_user.id
-    if @booking.save!
+    if @booking.save! 
+      # redirect_to :articles_path(@articles), notice: "Réservation pour votre #{@article}, faite avec succée !"
       redirect_to articles_path(@articles)
     else
       render :new

@@ -15,7 +15,7 @@ class ReviewsController < ApplicationController
     @review = Article.find(params[:article_id])
     #@review.user = current_user
     if @review.save!
-      redirect_to article_path(@review)
+      redirect_to article_path(@article)
     else
       render :new
     end
@@ -28,10 +28,7 @@ class ReviewsController < ApplicationController
   end
 
   def review_params
-    params.require(:review).permit(:rate_as_client, :about)
+    params.require(:review).permit(:rate_as_offer, :about)
     # Ligne de code à revoir car il manque le rate_as_offer
   end
 end
-
-# D'après nos routes on devrait avoir aussi show mais j'ai un doute sur l'importance de cette méthode
-#Cette  partie est à revoir

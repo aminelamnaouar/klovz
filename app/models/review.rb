@@ -1,3 +1,4 @@
 class Review < ApplicationRecord
-  belongs_to :booking
+  validates :rate_as_offer, presence: true
+  validates :about, presence: true
 end
