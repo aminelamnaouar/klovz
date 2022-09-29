@@ -1,1 +1,14 @@
-<span>vv</span>
+ <div class="container mt-5">
+    <%= simple_form_for(@article) do |f| %>
+        <%= f.input :sexe %>
+        <%= f.input :size %>
+        <%= f.input :color %>
+        <%= f.input :brand %>
+        <%= f.input :price %>
+        <%= f.input :description %>
+        <%= f.input :types %>
+        <%= f.input :title %>
+        <%= f.input :address %>
+        <%= f.button :submit, "Edit my Article", class: "btn btn-danger"%>
+    <% end %>
+</div>
