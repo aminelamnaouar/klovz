@@ -6,7 +6,15 @@ class ArticlesController < ApplicationController
   end
 
   def show
-
+  @articles = Article.all
+  @markers = @articles.geocoded.map do |article|
+    {
+      lat: article.latitude,
+      lng: article.longitude,
+      info_window: render_to_string(partial: "info_window", locals: {article: article}),
+      image_url: helpers.asset_url("logo.png")
+    }
+    end
   end
 
   def new
