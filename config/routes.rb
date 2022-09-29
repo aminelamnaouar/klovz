@@ -10,9 +10,13 @@ Rails.application.routes.draw do
   resources :articles do
     resources :bookings, only: [:new, :create]
   end
- #test
-  resources :bookings, except: %i[new edit create] do
-    resources :reviews, only: %i[index show create]
+
+  resources :articles do
+    resources :reviews, only: [:new, :create, :show]
   end
+ #test
+  # resources :bookings, except: %i[new edit create] do
+  #   resources :reviews, only: %i[index show create]
+  # end
   #resources :users, only: [:index, :show]
 end

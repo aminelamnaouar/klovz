@@ -1,4 +1,5 @@
 class ReviewsController < ApplicationController
+  before_action :set_review, only: %i[new create]
 
   # def index
   #   @reviews = Review.all
@@ -11,16 +12,20 @@ class ReviewsController < ApplicationController
 
   def create
     @review = Review.new(review_params)
-    @review.booking = Booking.find(params[:booking_id])
+    @review = Article.find(params[:article_id])
     #@review.user = current_user
-    if @review.save?
-      redirect_to booking_path(@review.booking)
+    if @review.save!
+      redirect_to article_path(@review)
     else
       render :new
     end
   end
 
   private
+
+  def set_review
+    @article = Article.find(params[:article_id])
+  end
 
   def review_params
     params.require(:review).permit(:rate_as_client, :about)

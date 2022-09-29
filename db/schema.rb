@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema[7.0].define(version: 2022_09_27_183534) do
+ActiveRecord::Schema[7.0].define(version: 2022_09_29_202808) do
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
 
@@ -25,6 +25,8 @@ ActiveRecord::Schema[7.0].define(version: 2022_09_27_183534) do
     t.datetime "updated_at", null: false
     t.string "types"
     t.string "title"
+    t.bigint "reviews_id"
+    t.index ["reviews_id"], name: "index_articles_on_reviews_id"
   end
 
   create_table "bookings", force: :cascade do |t|
@@ -45,6 +47,9 @@ ActiveRecord::Schema[7.0].define(version: 2022_09_27_183534) do
     t.bigint "booking_id", null: false
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+    t.bigint "articles_id"
+    t.bigint "article_id"
+    t.index ["article_id"], name: "index_reviews_on_article_id"
     t.index ["booking_id"], name: "index_reviews_on_booking_id"
   end
 
@@ -60,12 +65,11 @@ ActiveRecord::Schema[7.0].define(version: 2022_09_27_183534) do
     t.string "first_name"
     t.integer "telephone"
     t.bigint "bookings_id"
-    t.index ["bookings_id"], name: "index_users_on_bookings_id"
     t.index ["email"], name: "index_users_on_email", unique: true
     t.index ["reset_password_token"], name: "index_users_on_reset_password_token", unique: true
   end
 
   add_foreign_key "bookings", "articles"
   add_foreign_key "bookings", "users", column: "users_id"
-  add_foreign_key "reviews", "bookings"
+  add_foreign_key "reviews", "articles"
 end
