@@ -27,6 +27,10 @@ ActiveRecord::Schema[7.0].define(version: 2022_09_29_202808) do
     t.string "title"
     t.bigint "reviews_id"
     t.index ["reviews_id"], name: "index_articles_on_reviews_id"
+    t.integer "rating"
+    t.string "address"
+    t.float "latitude"
+    t.float "longitude"
   end
 
   create_table "bookings", force: :cascade do |t|
