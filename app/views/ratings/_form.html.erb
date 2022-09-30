@@ -1,5 +1,5 @@
-<%= simple_form_for(rating) do |f| %>
-  <%= f.input :rate_as_client %>
+<%= simple_form_for([@article, @rating]) do |f| %>
+  <%= f.input :rate %>
   <%= f.input :about %>
   <%= f.submit %>
 <% end %>

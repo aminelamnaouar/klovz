@@ -7,6 +7,7 @@ class ArticlesController < ApplicationController
 
   def show
   @articles = Article.all
+  @rating = Rating.new
   @markers = @articles.geocoded.map do |article|
     {
       lat: article.latitude,

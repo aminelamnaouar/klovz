@@ -3,9 +3,11 @@ class RatingsController < ApplicationController
         @rating = Rating.new
     end
     def create
+        @article = Article.find(params[:article_id])
         @rating = Rating.new(rating_params)
+        @rating.article = @article
         if @rating.save!
-            redirect_to root_path
+            redirect_to article_path(@article)
         else
             render :new
         end
