@@ -12,9 +12,9 @@ Rails.application.routes.draw do
   end
 
   resources :articles do
-    # resources :ratings, only: [:new, :create, :show]
+    resources :ratings, only: [:new, :create, :show]
   end
-  resources :ratings, only: [:new, :create, :show]
+  # resources :ratings, only: [:new, :create, :show]
  #test
   # resources :bookings, except: %i[new edit create] do
   #   resources :ratings, only: %i[index show create]

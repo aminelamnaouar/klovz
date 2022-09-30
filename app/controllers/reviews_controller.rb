@@ -28,7 +28,7 @@ class ReviewsController < ApplicationController
   end
 
   def review_params
-    params.require(:review).permit(:rate_as_offer, :about)
+    params.require(:review).permit(:rate, :about)
     # Ligne de code à revoir car il manque le rate_as_offer
   end
 end

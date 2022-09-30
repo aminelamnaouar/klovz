@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema[7.0].define(version: 2022_09_29_225517) do
+ActiveRecord::Schema[7.0].define(version: 2022_09_30_001204) do
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
 
@@ -29,8 +29,6 @@ ActiveRecord::Schema[7.0].define(version: 2022_09_29_225517) do
     t.string "address"
     t.float "latitude"
     t.float "longitude"
-    t.bigint "reviews_id"
-    t.index ["reviews_id"], name: "index_articles_on_reviews_id"
   end
 
   create_table "bookings", force: :cascade do |t|
@@ -47,8 +45,10 @@ ActiveRecord::Schema[7.0].define(version: 2022_09_29_225517) do
   create_table "ratings", force: :cascade do |t|
     t.string "about"
     t.string "rate"
+    t.bigint "article_id", null: false
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+    t.index ["article_id"], name: "index_ratings_on_restaurant_id"
   end
 
   create_table "reviews", force: :cascade do |t|
@@ -56,6 +56,8 @@ ActiveRecord::Schema[7.0].define(version: 2022_09_29_225517) do
     t.text "about"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+    t.bigint "article_id"
+    t.index ["article_id"], name: "index_reviews_on_article_id"
   end
 
   create_table "users", force: :cascade do |t|
@@ -77,4 +79,5 @@ ActiveRecord::Schema[7.0].define(version: 2022_09_29_225517) do
 
   add_foreign_key "bookings", "articles"
   add_foreign_key "bookings", "users", column: "users_id"
+  add_foreign_key "reviews", "articles"
 end
