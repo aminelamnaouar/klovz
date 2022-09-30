@@ -1,11 +1,13 @@
+<div class="container">
 <%= simple_form_for(article) do |f| %>
-  <%= f.input :title %>
-  <%= f.input :types %>
-  <%= f.input :sexe %>
-  <%= f.input :size %>
-  <%= f.input :color %>
-  <%= f.input :brand %>
-  <%= f.input :price %>
-  <%= f.input :address %>
+  <%= f.input :title, label: 'Titre de votre annonce' %>
+  <%= f.input :types, label: 'Type de produit', collection: {Pantalon: :P, Jupe: :J, Costume: :C, Robe: :R, Accessoire: :A, Chaussures: :Ch, Short: :S, Equipement: :E, Bijoux: :B, Autres: :AT} %>
+  <%= f.input :sexe, collection: {Homme: :M, Femme: :F, Mixte: :HM} %>
+  <%= f.input :size, label: 'Taille' %>
+  <%= f.input :color, label: 'Couleur' %>
+  <%= f.input :brand, label: 'Marque' %>
+  <%= f.input :price, label: 'Prix' %>
+  <%= f.input :address, label: 'Adresse' %>
   <%= f.submit %>
 <% end %>
+</div>

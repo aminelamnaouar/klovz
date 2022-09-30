@@ -1,5 +1,5 @@
 <%= simple_form_for([@article, @rating]) do |f| %>
-  <%= f.input :rate %>
-  <%= f.input :about %>
-  <%= f.submit %>
+  <%= f.input :rate, as: :float, label: 'Note' %>
+  <%= f.input :about, label: 'Commentaire' %>
+  <%= f.submit "Soumettre la notation", class: "btn btn-secondary"%>
 <% end %>
