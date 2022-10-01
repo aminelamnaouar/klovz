@@ -1,5 +1,7 @@
+<div class="mt-5 pt-5">
+  <h1 style="margin-top: 90px!important;">Listing Articles</h1>
+</div>
 <div class="container card1">
-  <h1 class="mt-5" style="margin-top: 30px;">Listing Articles</h1>
 
   <% @articles.each do |article| %>
 
@@ -19,7 +21,11 @@
         </ul>
         <div class="card-body">
           <span><%= link_to 'Show', article %></span>
-          <span><%= link_to 'Edit', edit_article_path(article) %></span>
+          <% if (article.price == 210) %>
+            <p><%= link_to 'Edit', edit_article_path(article) %></p>
+          <% else %>
+            <%= %>
+          <% end %>
           <span><%= link_to "Destroy", article_path(article), data: {turbo_method: :delete, turbo_confirm: "Are you sure?"}%></td>
         </div>
       </div>
