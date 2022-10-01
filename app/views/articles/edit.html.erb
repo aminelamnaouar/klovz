@@ -1,14 +1,21 @@
- <div class="container mt-5">
+ <div class="container">
+  <div class="card" style="width: 48rem;">
+    <img src="..." class="card-img-top" alt="...">
+    <div class="card-body">
+      <h3>Editez votre article</h3>
     <%= simple_form_for(@article) do |f| %>
-        <%= f.input :title %>
-        <%= f.input :types %>
-        <%= f.input :sexe %>
-        <%= f.input :size %>
-        <%= f.input :color %>
-        <%= f.input :brand %>
-        <%= f.input :price %>
-        <%= f.input :description %>
-        <%= f.input :address %>
+        <%= f.input :title, label: 'Titre' %>
+        <%= f.input :types, label: 'Type' %>
+        <%= f.input :sexe, label: 'Sexe' %>
+        <%= f.input :size, label: 'Taille' %>
+        <%= f.input :color, label: 'Couleur' %>
+        <%= f.input :brand, label: 'Marque' %>
+        <%= f.input :price, label: 'Prix' %>
+        <%= f.input :description, label: 'Description' %>
+        <%= f.input :address, label: 'Adresse' %>
+        <%= f.input :image, label: "Changer l'image" %>
         <%= f.button :submit, "Edit my Article", class: "btn btn-danger"%>
     <% end %>
+    </div>
+  </div>
 </div>
