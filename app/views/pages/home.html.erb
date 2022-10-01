@@ -1,4 +1,7 @@
 <div class="banner">
-<%= image_tag "banner.png", alt: "logo klovz" %>
+  <div class="container">
+    <h1 data-controller="typed-js"></h1>
+    <p>Pourquoi acheter si on peut louer ?</p>
+    <%= link_to "Réserver un article !", articles_path, class: "btn btn-primary" %>
+  </div>
 </div>
-<%= link_to "welcom to klovz", articles_path %>
