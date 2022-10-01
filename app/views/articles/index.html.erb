@@ -1,9 +1,8 @@
+<div class="container" style="margin-top: 80px;">
+<h1 class="mt-5">Listing Articles</h1>
+</div>
 <div class="container card1">
-  <h1 class="mt-5">Listing Articles</h1>
-
   <% @articles.each do |article| %>
-
-
       <div class="mt-5" style="width: 30rem;">
         <img src="<%= article.image %>" class="card-img-top" alt="...">
         <div class="card-body">
@@ -23,10 +22,7 @@
           <span><%= link_to "Destroy", article_path(article), data: {turbo_method: :delete, turbo_confirm: "Are you sure?"}%></td>
         </div>
       </div>
-
-
   <% end %>
-
   <br>
   <%= link_to 'New Article', new_article_path, class: "btn btn-primary" %>
 
