@@ -4,14 +4,14 @@
     <div class="card-body">
       <%= simple_form_for(article) do |f| %>
       <%= f.input :title, label: 'Titre de votre annonce' %>
-      <%= f.input :types, label: 'Type de produit', collection: {Pantalon: :P, Jupe: :J, Costume: :C, Robe: :R, Accessoire: :A, Chaussures: :Ch, Short: :S, Equipement: :E, Bijoux: :B, Autres: :AT} %>
-      <%= f.input :sexe, collection: {Homme: :M, Femme: :F, Mixte: :HM} %>
+      <%= f.input :types, label: 'Type de produit', collection: {Pantalon: :Pantalon, Jupe: :Jupe, Costume: :Costume, Robe: :Robe, Accessoire: :Accessoire, Chaussure: :Chaussure, Short: :Short, Equipement: :Equipement, Bijoux: :Bijoux, Autres: :Autres} %>
+      <%= f.input :sexe, collection: {Homme: :Homme, Femme: :Femme, Mixte: :Mixte} %>
       <%= f.input :size, label: 'Taille' %>
       <%= f.input :color, label: 'Couleur' %>
       <%= f.input :brand, label: 'Marque' %>
       <%= f.input :price, label: 'Prix' %>
       <%= f.input :address, label: 'Adresse' %>
-      <%= f.input :image, label: 'Télécharger une photo de votre article', as: :file %>
+      <%= f.input :image, label: 'Télécharger une photo de votre article'%>
       <%= f.submit %>
       <% end %>
     </div>

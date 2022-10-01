@@ -1,11 +1,11 @@
-<div class="container">
+<div class="container card1">
   <h1>Listing Articles</h1>
 
   <% @articles.each do |article| %>
 
-    
-      <div class="card" style="width: 30rem;">
-        <img src="..." class="card-img-top" alt="...">
+
+      <div class="" style="width: 30rem;">
+        <img src="<%= article.image %>" class="card-img-top" alt="...">
         <div class="card-body">
           <h3><%= article.title %></h3>
         </div>
@@ -23,7 +23,7 @@
           <span><%= link_to "Destroy", article_path(article), data: {turbo_method: :delete, turbo_confirm: "Are you sure?"}%></td>
         </div>
       </div>
-    
+
 
   <% end %>
 
