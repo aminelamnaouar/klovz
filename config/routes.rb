@@ -11,6 +11,8 @@ Rails.application.routes.draw do
     resources :bookings, only: [:new, :create]
   end
 
+  resources :bookings, to: 'bookings#index'
+
   resources :articles do
     resources :ratings, only: [:new, :create, :show]
   end
