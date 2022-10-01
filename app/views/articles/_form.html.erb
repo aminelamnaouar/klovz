@@ -1,11 +1,19 @@
-<%= simple_form_for(article) do |f| %>
-  <%= f.input :title %>
-  <%= f.input :types %>
-  <%= f.input :sexe %>
-  <%= f.input :size %>
-  <%= f.input :color %>
-  <%= f.input :brand %>
-  <%= f.input :price %>
-  <%= f.input :address %>
-  <%= f.submit %>
-<% end %>
+<div class="container">
+  <div class="card" style="width: 48rem;">
+    <img src="..." class="card-img-top" alt="...">
+    <div class="card-body">
+      <%= simple_form_for(article) do |f| %>
+      <%= f.input :title, label: 'Titre de votre annonce' %>
+      <%= f.input :types, label: 'Type de produit', collection: {Pantalon: :Pantalon, Jupe: :Jupe, Costume: :Costume, Robe: :Robe, Accessoire: :Accessoire, Chaussure: :Chaussure, Short: :Short, Equipement: :Equipement, Bijoux: :Bijoux, Autres: :Autres} %>
+      <%= f.input :sexe, collection: {Homme: :Homme, Femme: :Femme, Mixte: :Mixte} %>
+      <%= f.input :size, label: 'Taille' %>
+      <%= f.input :color, label: 'Couleur' %>
+      <%= f.input :brand, label: 'Marque' %>
+      <%= f.input :price, label: 'Prix' %>
+      <%= f.input :address, label: 'Adresse' %>
+      <%= f.input :image, label: 'Télécharger une photo de votre article'%>
+      <%= f.submit %>
+      <% end %>
+    </div>
+  </div>
+</div>

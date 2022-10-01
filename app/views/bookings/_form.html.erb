@@ -1,6 +1,6 @@
 <%= simple_form_for [@article, @booking] do |f| %>
-  <%= f.input :start_date %>
-  <%= f.input :end_date %>
+  <%= f.input :start_date, label: 'Début de la location' %>
+  <%= f.input :end_date, label: 'Fin de la location' %>
   <%= f.button :submit %>
 <% end %>
 
@@ -9,7 +9,7 @@
   <%#= f.input :end_date %>
   <%#= f.input :article_id %>
   <%# <%= f.input :created_at %>
-  <%# <%= f.input :updated_at %> 
+  <%# <%= f.input :updated_at %>
   <%# f.input :users_id, value: "#{current_user.id}"%>
   <%#= f.submit class: "btn btn-primary" %>
 <%# end %>
