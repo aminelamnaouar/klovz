@@ -1,8 +1,11 @@
-<div class="container mt-5" style="margin-top: 150px;!important"><br>
+    <script>
+        setTimeout(window.alert("Vous avez une promotion sur votre prochaine réservation ! - 10%"), "10000");
+    </script>
+<div class="container mt-5" style="margin-top: 100px!important;"><br>
     <% @bookings.each do |booking| %>
     <%#= if booking != current_user %>
-        <h3 class="mt-5"><%= booking.start_date %></h3>
-        <h3><%= booking.end_date %></h3>
+        <h3 class="mt-5"> Date de votre réservation : <%= booking.start_date %></h3>
+        <h3>Date de remise en main propre de votre article : <%= booking.end_date %></h3>
         <%# else %>
         <% "Vous n'avez pas encore de réservation 😔" %><br>
         <%= link_to "Faire une réservation", articles_path, class: "btn btn-primary" %>
