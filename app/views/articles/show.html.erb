@@ -8,7 +8,7 @@
       <p>Couleur: <%= @article.color %></p>
       <p>Marque: <%= @article.brand %></p>
       <p>Prix: <%= @article.price %></p>
-
+      <%= link_to "Je réserve 💪", "/articles/#{@article.id}/bookings/new", class: "pul" %><br>
     </div>
 
     <div class="col-12 col-lg-4 mt-5">
@@ -17,14 +17,17 @@
        <h2> <%= rating.about %>
         <%= rating.rate %></h2>
       <% end %>
-    <p><%= link_to 'Edit', edit_article_path(@article) %></p>
+      <% if (@article.price == 210) %>
+      <p><%= link_to 'Edit', edit_article_path(@article) %></p>
+      <% else %>
+      <%= %>
+      <% end %>
     </div>
 
 
   </div>
-  <div style="width: 100%; height: 600px;"
+  <div class="mt-5" style="width: 100%; height: 600px;"
   data-controller="map"
   data-map-markers-value="<%= @markers.to_json %>"
   data-map-api-key-value="pk.eyJ1IjoiYm9vYnljb2RpZXBpZSIsImEiOiJjbDhnODVta3oxbDdrM3hxOXp2amY1dHVyIn0.7fJbJYB8qQlk5uhaejh4xw"></div>
 </div>
-<%= link_to "booking", "/articles/#{@article.id}/bookings/new" %>
