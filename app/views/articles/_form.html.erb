@@ -1,14 +1,19 @@
 <div class="container">
-<%= simple_form_for(article) do |f| %>
-  <%= f.input :title, label: 'Titre de votre annonce' %>
-  <%= f.input :types, label: 'Type de produit', collection: {Pantalon: :P, Jupe: :J, Costume: :C, Robe: :R, Accessoire: :A, Chaussures: :Ch, Short: :S, Equipement: :E, Bijoux: :B, Autres: :AT} %>
-  <%= f.input :sexe, collection: {Homme: :M, Femme: :F, Mixte: :HM} %>
-  <%= f.input :size, label: 'Taille' %>
-  <%= f.input :color, label: 'Couleur' %>
-  <%= f.input :brand, label: 'Marque' %>
-  <%= f.input :price, label: 'Prix' %>
-  <%= f.input :address, label: 'Adresse' %>
-  <%= f.input :image, label: 'Télécharger une photo de votre article', as: :file %>
-  <%= f.submit %>
-<% end %>
+  <div class="card" style="width: 48rem;">
+    <img src="..." class="card-img-top" alt="...">
+    <div class="card-body">
+      <%= simple_form_for(article) do |f| %>
+      <%= f.input :title, label: 'Titre de votre annonce' %>
+      <%= f.input :types, label: 'Type de produit', collection: {Pantalon: :P, Jupe: :J, Costume: :C, Robe: :R, Accessoire: :A, Chaussures: :Ch, Short: :S, Equipement: :E, Bijoux: :B, Autres: :AT} %>
+      <%= f.input :sexe, collection: {Homme: :M, Femme: :F, Mixte: :HM} %>
+      <%= f.input :size, label: 'Taille' %>
+      <%= f.input :color, label: 'Couleur' %>
+      <%= f.input :brand, label: 'Marque' %>
+      <%= f.input :price, label: 'Prix' %>
+      <%= f.input :address, label: 'Adresse' %>
+      <%= f.input :image, label: 'Télécharger une photo de votre article', as: :file %>
+      <%= f.submit %>
+      <% end %>
+    </div>
+  </div>
 </div>
